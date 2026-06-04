@@ -6,13 +6,13 @@ if status is-interactive
     end
 end
 
-# if not set -q TMUX
-#     if type -q tmux
-#         tmux new-session -A -s main
-#     else if type -q zellij
-#         zellij attach -c main
-#     end
-# end
+if not set -q TMUX
+    if type -q tmux
+        tmux new-session -A -s main
+    else if type -q zellij
+        zellij attach -c main
+    end
+end
 
 starship init fish | source
 zoxide init fish | source
