@@ -1,50 +1,66 @@
--- UI enhancements
+local mode = {
+    "mode",
+    fmt = function(s)
+        local mode_map = {
+            ["NORMAL"] = "N",
+            ["O-PENDING"] = "N?",
+            ["INSERT"] = "I",
+            ["VISUAL"] = "V",
+            ["V-BLOCK"] = "VB",
+            ["V-LINE"] = "VL",
+            ["V-REPLACE"] = "VR",
+            ["REPLACE"] = "R",
+            ["COMMAND"] = "!",
+            ["SHELL"] = "SH",
+            ["TERMINAL"] = "T",
+            ["EX"] = "X",
+            ["S-BLOCK"] = "SB",
+            ["S-LINE"] = "SL",
+            ["SELECT"] = "S",
+            ["CONFIRM"] = "Y?",
+            ["MORE"] = "M",
+        }
+        return mode_map[s] or s
+    end,
+}
+
+-- This file contains the configuration for various UI-related plugins in Neovim.
 return {
-    -- focus mode (hide everything except the the file)
-    {
-        "folke/zen-mode.nvim",
-        cmd = "ZenMode",
-        opts = {
-            plugins = {
-                options = {
-                    laststatus = 0,
-                },
-                tmux = true,
-                kitty = { enabled = false, font = "+4" },
-                alacritty = { enabled = true, font = "18" },
-            },
-        },
-        keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
-    },
+    -- Plugin: folke/todo-comments.nvim
+    -- URL: https://github.com/folke/todo-comments.nvim
+    -- Description: Plugin to highlight and search for TODO, FIX, HACK, etc. comments in your code.
+    -- IMPORTANT: using version "*" to fix a bug
+    { "folke/todo-comments.nvim", version = "*" },
 
-    -- indent line
+    -- Plugin: folke/which-key.nvim
+    -- URL: https://github.com/folke/which-key.nvim
+    -- Description: Plugin to show a popup with available keybindings.
+    -- IMPORTANT: using event "VeryLazy" to optimize loading time
     {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
+        "folke/which-key.nvim",
+        event = "VeryLazy",
         opts = {
-            indent = {
-                char = "▏",
-            },
-            scope = {
-                show_start = false,
-                show_end = false,
-                show_exact_scope = false,
-            },
-            exclude = {
-                filetypes = {
-                    "help",
-                    "startify",
-                    "dashboard",
-                    "packer",
-                    "neogitstatus",
-                    "NvimTree",
-                    "Trouble",
-                },
-            },
+            preset = "classic",
+            win = { border = "single" },
         },
     },
 
-    -- status bar
+    -- Plugin: nvim-docs-view
+    -- URL: https://github.com/amrbashir/nvim-docs-view
+    -- Description: A Neovim plugin for viewing documentation.
+    {
+        "amrbashir/nvim-docs-view",
+        lazy = true, -- Load this plugin lazily
+        cmd = "DocsViewToggle", -- Command to toggle the documentation view
+        opts = {
+            position = "right", -- Position the documentation view on the right
+            width = 60, -- Set the width of the documentation view
+        },
+    },
+
+    -- Plugin: lualine.nvim
+    -- URL: https://github.com/nvim-lualine/lualine.nvim
+    -- Description: A blazing fast and easy to configure Neovim statusline plugin.
     {
         "nvim-lualine/lualine.nvim",
         config = function()
@@ -71,66 +87,46 @@ return {
         end,
     },
 
-    -- keymaps hints
+    -- Plugin: incline.nvim
+    -- URL: https://github.com/b0o/incline.nvim
+    -- Description: A Neovim plugin for showing the current filename in a floating window.
     {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        opts = {},
-        keys = {
-            {
-                "<leader>?",
-                function()
-                    require("which-key").show({ global = false })
-                end,
-                desc = "Buffer Local Keymaps (which-key)",
-            },
-        },
-    },
-
-    -- lsp progress notification
-    {
-        "j-hui/fidget.nvim",
-        opts = {
-            notification = {
-                window = {
-                    winblend = 0,
-                    normal_hl = "FloatBorder",
-                    override_vim_notify = false, -- let mini.notify handle vim.notify
+        "b0o/incline.nvim",
+        event = "BufReadPre", -- Load this plugin before reading a buffer
+        priority = 1200, -- Set the priority for loading this plugin
+        config = function()
+            require("incline").setup({
+                window = { margin = { vertical = 0, horizontal = 1 } }, -- Set the window margin
+                hide = {
+                    cursorline = true, -- Hide the incline window when the cursorline is active
                 },
+                render = function(props)
+                    local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t") -- Get the filename
+                    if vim.bo[props.buf].modified then
+                        filename = "[+] " .. filename -- Indicate if the file is modified
+                    end
+
+                    local icon, color = require("nvim-web-devicons").get_icon_color(filename) -- Get the icon and color for the file
+                    return { { icon, guifg = color }, { " " }, { filename } } -- Return the rendered content
+                end,
+            })
+        end,
+    },
+
+    -- Plugin: zen-mode.nvim
+    -- URL: https://github.com/folke/zen-mode.nvim
+    -- Description: A Neovim plugin for distraction-free coding.
+    {
+        "folke/zen-mode.nvim",
+        cmd = "ZenMode", -- Command to toggle Zen Mode
+        opts = {
+            plugins = {
+                gitsigns = true, -- Enable gitsigns integration
+                tmux = true, -- Enable tmux integration
+                kitty = { enabled = false, font = "+2" }, -- Disable kitty integration and set font size
+                twilight = { enabled = true }, -- Enable twilight integration
             },
         },
-    },
-
-    -- better comments highlights
-    {
-        "folke/todo-comments.nvim",
-        event = "VimEnter",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        opts = { signs = false },
-    },
-
-    -- Undo history
-    {
-        "mbbill/undotree",
-        config = function()
-            vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
-        end,
-    },
-
-    -- Incremental rename
-    {
-        "smjonas/inc-rename.nvim",
-        cmd = "IncRename",
-        config = true,
-    },
-
-    -- split and join
-    {
-        "Wansmer/treesj",
-        keys = { "<space>m" },
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
-        config = function()
-            require("treesj").setup({ max_join_length = 200 })
-        end,
+        keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } }, -- Keybinding to toggle Zen Mode
     },
 }
