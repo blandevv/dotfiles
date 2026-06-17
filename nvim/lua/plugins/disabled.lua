@@ -47,4 +47,9 @@ return {
         "vyfor/cord.nvim",
         enabled = false,
     },
+    -- {
+    --
+    --     "zbirenbaum/copilot.lua",
+    --     enabled = false,
+    -- },
 }

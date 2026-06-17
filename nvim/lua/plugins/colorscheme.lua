@@ -85,7 +85,7 @@ return {
         {
             "LazyVim/LazyVim",
             opts = {
-                colorscheme = "vague",
+                colorscheme = "monoglow",
             },
         },
     },

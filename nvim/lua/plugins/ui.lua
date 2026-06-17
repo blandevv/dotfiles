@@ -87,6 +87,14 @@ return {
         end,
     },
 
+    {
+        "nvim-mini/mini.icons",
+        version = false,
+        config = function()
+            require("mini.icons").setup()
+        end,
+    },
+
     -- Plugin: incline.nvim
     -- URL: https://github.com/b0o/incline.nvim
     -- Description: A Neovim plugin for showing the current filename in a floating window.

@@ -1,3 +1,3 @@
 return {
-  "tris203/precognition.nvim",
+    "tris203/precognition.nvim",
 }
