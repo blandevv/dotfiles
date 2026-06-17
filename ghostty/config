@@ -1,6 +1,7 @@
 theme = dark
-font-family = Dank Mono
-font-size = 16
+font-family = IoskeleyMonoTerm Nerd Font
+
+font-size = 14
 
 background-opacity = 0.6
 background-blur-radius = 20
@@ -16,7 +17,7 @@ window-width = 150
 
 gtk-tabs-location = hidden
 
-adjust-cell-height = 50%
+# adjust-cell-height = 50%
 
 custom-shader = shaders/cursor_smear.glsl
 
