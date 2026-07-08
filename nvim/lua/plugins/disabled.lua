@@ -45,7 +45,7 @@ return {
     },
     {
         "vyfor/cord.nvim",
-        enabled = false,
+        enabled = true,
     },
     -- {
     --

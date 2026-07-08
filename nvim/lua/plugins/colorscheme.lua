@@ -83,9 +83,35 @@ return {
         },
 
         {
+            "webhooked/kanso.nvim",
+            lazy = false,
+            priority = 1000,
+            opts = {
+                background = {
+                    dark = "zen",
+                },
+                transparent = true,
+            },
+        },
+
+        {
+            "catppuccin/nvim",
+            name = "catppuccin",
+            priority = 1000,
+            opts = {
+                flavour = "mocha",
+                transparent_background = true,
+                float = {
+                    transparent = true,
+                },
+            },
+        },
+
+        {
             "LazyVim/LazyVim",
             opts = {
-                colorscheme = "monoglow",
+                colorscheme = "catppuccin-nvim",
+                -- colorscheme = "monoglow",
             },
         },
     },
