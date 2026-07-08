@@ -27,7 +27,7 @@ carapace _carapace | source
 
 set -g fish_greeting ""
 
-fastfetch
+# fastfetch
 
 fish_vi_key_bindings
 
@@ -41,6 +41,9 @@ alias cat="bat"
 alias ls="eza --icons --group-directories-first"
 alias ll="eza -lh --icons --git"
 alias ff="fastfetch"
+alias n="nvim"
+alias l="ll"
+alias py="python"
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
