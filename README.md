@@ -2,6 +2,8 @@
 
 Personal dotfiles for macOS and Linux, featuring Neovim, Tmux, Fish, Ghostty, and a streamlined terminal-first workflow.
 
+> Based on [Gentleman.Dots](https://github.com/Gentleman-Programming/Gentleman.Dots) by [@Gentleman-Programming](https://github.com/Gentleman-Programming).
+
 ## Showcase 
 
 ![preview](./assets/preview.png)
