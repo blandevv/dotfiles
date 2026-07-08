@@ -1,1 +1,6 @@
 .DS_Store
+
+# herdr runtime files
+herdr/session.json
+herdr/*.log
+herdr/release-notes.json
