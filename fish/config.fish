@@ -43,6 +43,7 @@ alias ll="eza -lh --icons --git"
 alias ff="fastfetch"
 alias n="nvim"
 alias l="ll"
+alias lg="lazygit"
 alias py="python"
 
 set -Ux PYENV_ROOT $HOME/.pyenv
