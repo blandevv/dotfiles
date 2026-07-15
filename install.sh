@@ -108,6 +108,7 @@ BREW_PACKAGES=(
   lazygit  # git TUI (integrated in nvim)
   node     # Node.js runtime (nvim LSP servers, Copilot)
   pipx     # isolated Python CLI tool installer
+  herdr    # terminal agent multiplexer
 )
 
 BREW_CASKS=(
@@ -196,6 +197,7 @@ create_symlinks() {
   backup_and_link "$DOTFILES_DIR/btop" "$cfg/btop"
   backup_and_link "$DOTFILES_DIR/ranger" "$cfg/ranger"
   backup_and_link "$DOTFILES_DIR/posting" "$cfg/posting"
+  backup_and_link "$DOTFILES_DIR/herdr" "$cfg/herdr"
   backup_and_link "$DOTFILES_DIR/git" "$cfg/git"
   backup_and_link "$DOTFILES_DIR/starship.toml" "$cfg/starship.toml"
   backup_and_link "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
