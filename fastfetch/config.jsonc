@@ -11,85 +11,97 @@
     }
   },
   "display": {
-    "separator": " "
+    "separator": "  ",
+    "color": "white"
   },
   "modules": [
+    "break",
     {
-      "key": "╭───────────╮",
-      "type": "custom"
+      "type": "custom",
+      "key": "╭─────────────────────────────────────────╮"
     },
     {
-      "key": "│ {#31} user    {#keys}│",
-      "type": "title",
-      "format": "{user-name}"
+      "type": "custom",
+      "key": "│                                         │"
     },
     {
-      "key": "│ {#33}󰅐 uptime  {#keys}│",
-      "type": "uptime"
-    },
-    {
-      "key": "│ {#32} display {#keys}│",
-      "type": "display",
-      "compactType": "original-with-refresh-rate"
-    },
-    {
-      "key": "│ {#34}{icon} distro  {#keys}│",
-      "type": "os"
-    },
-    {
-      "key": "│ {#35} kernel  {#keys}│",
-      "type": "kernel"
-    },
-    {
-      "key": "│ {#36} wm      {#keys}│",
-      "type": "wm"
-    },
-    {
-      "key": "│ {#36}󰇄 desktop {#keys}│",
-      "type": "de"
-    },
-    {
-      "key": "│ {#31} term    {#keys}│",
-      "type": "terminal"
-    },
-    {
-      "key": "│ {#32} shell   {#keys}│",
-      "type": "shell"
-    },
-    {
-      "type": "packages",
-      "key": "│ {#33}󰏖 apps    {#keys}│"
-    },
-    {
-      "key": "│ {#34}󰉉 disk    {#keys}│",
-      "type": "disk",
-      "folders": "/"
-    },
-    {
-      "key": "│ {#36} memory  {#keys}│",
-      "type": "memory"
-    },
-    {
-      "type": "terminalfont",
-      "key": "│ {#35} font    {#keys}│"
+      "type": "os",
+      "key": "│  OS           ",
+      "format": "{pretty-name>22}  │"
     },
     {
       "type": "command",
-      "key": "│ {#33}󱦟 OS Age  {#keys}│",
-      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+      "key": "│  Kernel       ",
+      "text": "uname -r | cut -d '-' -f1",
+      "format": "{>22}  │"
     },
     {
-      "key": "├───────────┤",
-      "type": "custom"
+      "type": "command",
+      "key": "│  Uptime       ",
+      "text": "uptime -p | sed -E 's/up //; s/ days?/d/g; s/ hours?/h/g; s/ minutes?/m/g'",
+      "format": "{>22}  │"
     },
     {
-      "key": "│ {#39} colors  {#keys}│",
-      "type": "colors",
-      "symbol": "circle"
+      "type": "shell",
+      "key": "│  Shell        ",
+      "format": "{pretty-name>22}  │"
     },
     {
-      "key": "╰───────────╯",
-      "type": "custom"
-    }
+      "type": "command",
+      "key": "│  WM           ",
+      "text": "echo $XDG_CURRENT_DESKTOP",
+      "format": "{>22}  │"
+    },
+    {
+      "key": "│  OS Age                      ",
+      "type": "disk",
+      "folders": "/",
+      "format": "{days} days  │"
+    },
+    {
+      "type": "command",
+      "key": "│  Ram          ",
+      "text": "free -m | awk 'NR==2{printf \"%.2f / %.2f GiB\",$3/1024,$2/1024}'",
+      "format": "{>22}  │"
+    },
+    {
+      "type": "command",
+      "key": "│  CPU          ",
+      "text": "lscpu | grep 'Model name' | sed -E 's/.*(i[0-9]-[0-9A-Za-z]+).*/\\1/'",
+      "format": "{>22}  │"
+    },
+    {
+      "type": "command",
+      "key": "│  Disk         ",
+      "text": "df -h --output=size,used,fstype / | awk 'NR==2 {gsub(/G/,\"\",$1); gsub(/G/,\"\",$2); print $2 \" / \" $1 \" GiB - \" $3}'",
+      "format": "{>22}  │"
+    },
+    {
+      "type": "packages",
+      "key": "│  Packages     ",
+      "format": "{all>22}  │"
+    },
+    {
+      "type": "command",
+      "key": "│  Owner        ",
+      "text": "echo $USER | tr '[:lower:]' '[:upper:]'",
+      "format": "{>22}  │"
+    },
+    {
+      "type": "custom",
+      "key": "│                                         │"
+    },
+    {
+      "type": "command",
+      "key": " ",
+      "shell": "/bin/bash",
+      "text": "echo '│                継続は力なり             │'",
+      "format": "{1}"
+    },
+    {
+      "type": "custom",
+      "key": "╰─────────────────────────────────────────╯"
+    },
+    "break"
   ]
 }
