@@ -110,8 +110,8 @@ return {
         {
             "LazyVim/LazyVim",
             opts = {
-                colorscheme = "catppuccin-nvim",
-                -- colorscheme = "monoglow",
+                -- colorscheme = "catppuccin-nvim",
+                colorscheme = "monoglow",
             },
         },
     },
