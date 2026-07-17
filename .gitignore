@@ -5,3 +5,7 @@
 herdr/session.json
 herdr/*.log
 herdr/release-notes.json
+
+# Plugins managed at install time (tpm / git clone), not vendored
+tmux/plugins/
+ranger/plugins/ranger_devicons/
