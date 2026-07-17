@@ -31,14 +31,9 @@
     },
     {
       "type": "command",
-      "key": "│  Kernel       ",
-      "text": "uname -r | cut -d '-' -f1",
-      "format": "{>22}  │"
-    },
-    {
-      "type": "command",
       "key": "│  Uptime       ",
-      "text": "uptime -p | sed -E 's/up //; s/ days?/d/g; s/ hours?/h/g; s/ minutes?/m/g'",
+      "shell": "/bin/bash",
+      "text": "boot=$(sysctl -n kern.boottime | awk '{print $4}' | tr -d ,); now=$(date +%s); diff=$((now-boot)); d=$((diff/86400)); h=$(((diff%86400)/3600)); m=$(((diff%3600)/60)); if [ $d -gt 0 ]; then printf '%dd %dh %dm' $d $h $m; elif [ $h -gt 0 ]; then printf '%dh %dm' $h $m; else printf '%dm' $m; fi",
       "format": "{>22}  │"
     },
     {
@@ -47,45 +42,9 @@
       "format": "{pretty-name>22}  │"
     },
     {
-      "type": "command",
-      "key": "│  WM           ",
-      "text": "echo $XDG_CURRENT_DESKTOP",
-      "format": "{>22}  │"
-    },
-    {
-      "key": "│  OS Age                      ",
-      "type": "disk",
-      "folders": "/",
-      "format": "{days} days  │"
-    },
-    {
-      "type": "command",
-      "key": "│  Ram          ",
-      "text": "free -m | awk 'NR==2{printf \"%.2f / %.2f GiB\",$3/1024,$2/1024}'",
-      "format": "{>22}  │"
-    },
-    {
-      "type": "command",
-      "key": "│  CPU          ",
-      "text": "lscpu | grep 'Model name' | sed -E 's/.*(i[0-9]-[0-9A-Za-z]+).*/\\1/'",
-      "format": "{>22}  │"
-    },
-    {
-      "type": "command",
-      "key": "│  Disk         ",
-      "text": "df -h --output=size,used,fstype / | awk 'NR==2 {gsub(/G/,\"\",$1); gsub(/G/,\"\",$2); print $2 \" / \" $1 \" GiB - \" $3}'",
-      "format": "{>22}  │"
-    },
-    {
       "type": "packages",
       "key": "│  Packages     ",
       "format": "{all>22}  │"
-    },
-    {
-      "type": "command",
-      "key": "│  Owner        ",
-      "text": "echo $USER | tr '[:lower:]' '[:upper:]'",
-      "format": "{>22}  │"
     },
     {
       "type": "custom",
