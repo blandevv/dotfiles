@@ -20,7 +20,7 @@ $time\
 
 add_newline = true
 command_timeout = 3600000
-palette = "gentleman"
+palette = "dark"
 
 [fill]
 symbol = ' '
@@ -78,6 +78,32 @@ surface0 = "#191E28"
 base = "none"
 mantle = "#06080f"
 crust = "#06080f"
+
+[palettes.dark]
+text = "#f5f5f7"
+red = "#6e6e70"
+green = "#aeaeb0"
+yellow = "#8e8e90"
+blue = "#828284"
+mauve = "#9c9ca0"
+pink = "#48484a"
+teal = "#bebec2"
+peach = "#d1d1d6"
+subtext0 = "#a8a8ac"
+overlay0 = "#7a7a7c"
+rosewater = "#ffffff"
+flamingo = "#d1d1d6"
+maroon = "#6e6e70"
+lavender = "#9c9ca0"
+subtext1 = "#bebec2"
+overlay2 = "#98989a"
+overlay1 = "#86868a"
+surface2 = "#6c6c6e"
+surface1 = "#5c5c5e"
+surface0 = "#48484a"
+base = "#2c2c2e"
+mantle = "#1c1c1e"
+crust = "#000000"
 
 [character]
 success_symbol = "[󱗞 ](fg:green)"
