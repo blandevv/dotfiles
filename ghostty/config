@@ -1,50 +1,62 @@
-theme = gentleman
+# ---- theme ----
+theme = dark:"zenwritten_dark",light:"zenwritten_light"
+background-opacity = 0.9
+background-blur-radius = 24
 
-font-family = Liga SFMono Nerd Font
+# ---- font ----
+font-family = "Cascadia Code"
+font-feature = ss01, ss02, ss03, ss19, ss20, calt, ss01
+adjust-cell-height = 75%
+font-size = 14
 
-font-size = 14.5
-
-background-opacity = 0.85
-background-blur-radius = 20
-
-maximize = true
-
-window-decoration = true
-window-padding-color = extend
-window-step-resize = false
-window-padding-balance = true
-window-height = 45
-window-width = 150
-
-gtk-tabs-location = hidden
-
+# ---- cursor ----
+cursor-style = block
+cursor-style-blink = true
+cursor-invert-fg-bg = false
+cursor-opacity = .9
 custom-shader = shaders/cursor_smear.glsl
 
-# macOS Alt key fix
+# ---- window ----
+maximize = true
+# macos-titlebar-style = hidden
+macos-option-as-alt = right
+macos-auto-secure-input = false
+confirm-close-surface = true
+window-decoration = auto
+window-padding-x = 2
+window-padding-y = 0
+window-padding-balance = true
+
+# ---- mouse ----
+mouse-hide-while-typing = true
+
+# ---- shell integration ----
+shell-integration = detect
+
+# ---- keybindings ----
 keybind = alt+left=unbind
 keybind = alt+right=unbind
 
-# Split Management
+# ---- split management ----
 keybind = alt+v=new_split:right
 keybind = alt+d=new_split:down
 
-# Split Navigation
+# ---- split navigation ----
 keybind = alt+k=goto_split:up
 keybind = alt+j=goto_split:down
 keybind = alt+h=goto_split:left
 keybind = alt+l=goto_split:right
 
-# Split Resize
+# ---- split resizing ----
 keybind = ctrl+shift+j=resize_split:up,10
 keybind = ctrl+shift+k=resize_split:down,10
 keybind = ctrl+shift+h=resize_split:left,10
 keybind = ctrl+shift+l=resize_split:right,10
 
-# Miscellaneous
+# ---- split closing ----
 keybind = cmd+k=clear_screen
 keybind = shift+enter=text:\x1b\r
 
 # Open file with nvim (write 'nvim' first, then use this keybinding)
 keybind = alt+s=write_screen_file:paste
-
 keybind = global:cmd+grave_accent=toggle_quick_terminal
