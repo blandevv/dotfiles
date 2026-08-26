@@ -5,48 +5,6 @@ return {
             name = "gentleman-kanagawa-blur",
             priority = 1000,
         },
-        -- {
-        --   "metalelf0/black-metal-theme-neovim",
-        --   name = "black-metal",
-        --   lazy = false,
-        --   priority = 1000,
-        --   config = function()
-        --     -- Can be one of: bathory | burzum | dark-funeral | darkthrone | emperor | gorgoroth | immortal | impaled-nazarene | khold | marduk | mayhem | nile | taake | thyrfing | venom | windir
-        --     require("black-metal").setup({
-        --       theme = "bathory",
-        --       transparent = true,
-        --     })
-        --     require("black-metal").load()
-        --   end,
-        -- },
-        -- {
-        --   "slugbyte/lackluster.nvim",
-        --   lazy = false,
-        --   priority = 1000,
-        --   config = function()
-        --     local lackluster = require("lackluster")
-        --     lackluster.setup({
-        --       tweak_syntax = {
-        --         comment = lackluster.color.gray4,
-        --       },
-        --       tweak_background = {
-        --         normal = "none", -- none for transparent or default for solid
-        --         telescope = "none",
-        --         menu = "none",
-        --         popup = "none",
-        --       },
-        --     })
-        --     vim.cmd.colorscheme("lackluster-hack")
-        --   end,
-        -- },
-        {
-            "diegoulloao/neofusion.nvim",
-            priority = 1000,
-            config = true,
-            opts = {
-                transparent_mode = true,
-            },
-        },
         {
             "wnkz/monoglow.nvim",
             lazy = false,
@@ -74,27 +32,6 @@ return {
             },
         },
         {
-            "vague2k/vague.nvim",
-            lazy = false,
-            priority = 1000,
-            opts = {
-                transparent = true,
-            },
-        },
-
-        {
-            "webhooked/kanso.nvim",
-            lazy = false,
-            priority = 1000,
-            opts = {
-                background = {
-                    dark = "zen",
-                },
-                transparent = true,
-            },
-        },
-
-        {
             "catppuccin/nvim",
             name = "catppuccin",
             priority = 1000,
@@ -108,11 +45,37 @@ return {
         },
 
         {
+            "zenbones-theme/zenbones.nvim",
+            dependencies = "rktjmp/lush.nvim",
+            lazy = false,
+            priority = 1000,
+            config = function()
+                vim.g.zenwritten = {
+                    transparent_background = true,
+                    float_background = "none",
+                }
+                vim.o.background = "dark"
+                vim.cmd.colorscheme("zenwritten")
+                vim.api.nvim_create_autocmd("ColorScheme", {
+                    pattern = "*",
+                    callback = function()
+                        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+                        vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+                        vim.api.nvim_set_hl(0, "FloatTitle", { bg = "none" })
+
+                        vim.api.nvim_set_hl(0, "SnacksPicker", { bg = "none" })
+                        vim.api.nvim_set_hl(0, "SnacksPickerBorder", { bg = "none" })
+                        vim.api.nvim_set_hl(0, "SnacksPickerTitle", { bg = "none" })
+                        vim.api.nvim_set_hl(0, "SnacksPickerRow", { bg = "none" })
+                    end,
+                })
+            end,
+        },
+
+        {
             "LazyVim/LazyVim",
             opts = {
-                -- colorscheme = "gentleman-kanagawa-blur",
-                -- colorscheme = "catppuccin-nvim",
-                colorscheme = "monoglow",
+                colorscheme = "zenwritten",
             },
         },
     },
