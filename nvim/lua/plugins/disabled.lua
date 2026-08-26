@@ -52,4 +52,9 @@ return {
     --     "zbirenbaum/copilot.lua",
     --     enabled = false,
     -- },
+    {
+
+        "Gentleman-Programming/veil.nvim",
+        enabled = false,
+    },
 }
