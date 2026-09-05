@@ -1,255 +1,255 @@
-format = """\
-($directory)\
-$os\
-$git_branch\
-$fill\
-$nodejs\
-$rust\
-$golang\
-$php\
-$python\
-$bun\
-$java\
-$c\
-$conda\
-$zig\
-$cmd_duration\
-$time\
-\n$character\
-"""
-
-add_newline = true
-command_timeout = 3600000
-palette = "dark"
-
-[fill]
-symbol = ' '
-
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
-
-[palettes.gentleman]
-text = "#F3F6F9"
-red = "#CB7C94"
-green = "#B7CC85"
-yellow = "#FFE066"
-blue = "#7FB4CA"
-mauve = "#A3B5D6"
-pink = "#FF8DD7"
-teal = "#7AA89F"
-peach = "#DEBA87"
-subtext0 = "#5C6170"
-overlay0 = "#232A40"
-rosewater = "#E0C15A"
-flamingo = "#FF8DD7"
-maroon = "#C4746E"
-lavender = "#B99BF2"
-subtext1 = "#8A8FA3"
-overlay2 = "#313342"
-overlay1 = "#191E28"
-surface2 = "#27345C"
-surface1 = "#232A40"
-surface0 = "#191E28"
-base = "none"
-mantle = "#06080f"
-crust = "#06080f"
-
-[palettes.dark]
-text = "#f5f5f7"
-red = "#6e6e70"
-green = "#aeaeb0"
-yellow = "#8e8e90"
-blue = "#828284"
-mauve = "#9c9ca0"
-pink = "#48484a"
-teal = "#bebec2"
-peach = "#d1d1d6"
-subtext0 = "#a8a8ac"
-overlay0 = "#7a7a7c"
-rosewater = "#ffffff"
-flamingo = "#d1d1d6"
-maroon = "#6e6e70"
-lavender = "#9c9ca0"
-subtext1 = "#bebec2"
-overlay2 = "#98989a"
-overlay1 = "#86868a"
-surface2 = "#6c6c6e"
-surface1 = "#5c5c5e"
-surface0 = "#48484a"
-base = "#2c2c2e"
-mantle = "#1c1c1e"
-crust = "#000000"
-
-[palettes.zenwritten_dark]
-text = "#BBBBBB"
-red = "#DE6E7C"
-green = "#819B69"
-yellow = "#B77E64"
-blue = "#6099C0"
-mauve = "#B279A7"
-teal = "#66A5AD"
-bright_red = "#E8838F"
-bright_green = "#8BAE68"
-bright_yellow = "#D68C67"
-bright_blue = "#61ABDA"
-bright_mauve = "#CF86C1"
-bright_teal = "#65B8C1"
-subtext0 = "#8E8E8E"
-subtext1 = "#BBBBBB"
-overlay0 = "#3D3839"
-overlay1 = "#404040"
-overlay2 = "#595959"
-surface0 = "#191919"
-surface1 = "#292929"
-surface2 = "#3D3839"
-base = "#191919"
-mantle = "#191919"
-crust = "#191919"
-
-[palettes.zenwritten_light]
-text = "#353535"
-red = "#A8334C"
-green = "#4F6C31"
-yellow = "#944927"
-blue = "#286486"
-mauve = "#88507D"
-teal = "#3B8992"
-bright_red = "#94253E"
-bright_green = "#3F5A22"
-bright_yellow = "#803D1C"
-bright_blue = "#1D5573"
-bright_mauve = "#7B3B70"
-bright_teal = "#2B747C"
-subtext0 = "#5C5C5C"
-subtext1 = "#353535"
-overlay0 = "#C6C3C3"
-overlay1 = "#D7D7D7"
-overlay2 = "#E0E0E0"
-surface0 = "#EEEEEE"
-surface1 = "#E5E5E5"
-surface2 = "#D7D7D7"
-base = "#EEEEEE"
-mantle = "#EEEEEE"
-crust = "#EEEEEE"
-
-[character]
-success_symbol = "[󱗞 ](fg:green)"
-error_symbol = "[󱗞 ](fg:red)"
-vimcmd_symbol = "[N](bold red)"
-vimcmd_replace_one_symbol = "[R](bold peach)"
-vimcmd_visual_symbol = "[V](bold mauve)"
-
-[username]
-style_user = 'bold blue'
-style_root = 'bold red'
-format = '[󱗞 $user](fg:$style) '
-disabled = false
-show_always = true
-
-[directory]
-format = "[$path](bold $style)[$read_only]($read_only_style) "
-truncation_length = 2
-style = "fg:blue"
-read_only_style = "fg:blue"
-before_repo_root_style = "fg:blue"
-truncation_symbol = "…/"
-truncate_to_repo = true
-read_only = "  "
-
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-
-[cmd_duration]
-format = " took [ $duration]($style) "
-style = "bold fg:yellow"
-min_time = 500
-
-[git_branch]
-format = "-> [$symbol$branch]($style) "
-style = "bold fg:mauve"
-symbol = " "
-
-[git_status]
-format = '[$all_status$ahead_behind ]($style)'
-style = "fg:text bg:pink"
-
-[docker_context]
-disabled = true
-symbol = " "
-
-[python]
-disabled = false
-format = "[$symbol$pyenv_prefix($version)( $virtualenv)](fg:peach)"
-symbol = " "
-version_format = "$raw"
-
-[java]
-format = '[[ $symbol ($version) ](fg:red)]($style)'
-version_format = "$raw"
-symbol = " "
-disabled = false
-
-[c]
-format = '[[ $symbol ($version) ](fg:blue)]($style)'
-symbol = " "
-version_format = "$raw"
-disabled = false
-
-[zig]
-format = '[[ $symbol ($version) ](fg:peach)]($style)'
-version_format = "$raw"
-disabled = false
-
-[bun]
-version_format = "$raw"
-format = '[[ $symbol ($version) ](fg:text)]($style)'
-disabled = false
-
-[nodejs]
-symbol = ""
-format = '[[ $symbol ($version) ](fg:green)]($style)'
-
-[rust]
-symbol = ""
-format = '[[ $symbol ($version) ](fg:red)]($style)'
-
-[golang]
-symbol = ""
-format = '[[ $symbol ($version) ](fg:teal)]($style)'
-
-[php]
-symbol = ""
-format = '[[ $symbol ($version) ](fg:peach)]($style)'
-
-[time]
-disabled = false
-time_format = "%R"
-format = '[[   $time ](fg:subtext0)]($style)'
+# format = """\
+# ($directory)\
+# $os\
+# $git_branch\
+# $fill\
+# $nodejs\
+# $rust\
+# $golang\
+# $php\
+# $python\
+# $bun\
+# $java\
+# $c\
+# $conda\
+# $zig\
+# $cmd_duration\
+# $time\
+# \n$character\
+# """
+#
+# add_newline = true
+# command_timeout = 3600000
+# palette = "gentleman"
+#
+# [fill]
+# symbol = ' '
+#
+# [palettes.catppuccin_mocha]
+# rosewater = "#f5e0dc"
+# flamingo = "#f2cdcd"
+# pink = "#f5c2e7"
+# mauve = "#cba6f7"
+# red = "#f38ba8"
+# maroon = "#eba0ac"
+# peach = "#fab387"
+# yellow = "#f9e2af"
+# green = "#a6e3a1"
+# teal = "#94e2d5"
+# sky = "#89dceb"
+# sapphire = "#74c7ec"
+# blue = "#89b4fa"
+# lavender = "#b4befe"
+# text = "#cdd6f4"
+# subtext1 = "#bac2de"
+# subtext0 = "#a6adc8"
+# overlay2 = "#9399b2"
+# overlay1 = "#7f849c"
+# overlay0 = "#6c7086"
+# surface2 = "#585b70"
+# surface1 = "#45475a"
+# surface0 = "#313244"
+# base = "#1e1e2e"
+# mantle = "#181825"
+# crust = "#11111b"
+#
+# [palettes.gentleman]
+# text = "#F3F6F9"
+# red = "#CB7C94"
+# green = "#B7CC85"
+# yellow = "#FFE066"
+# blue = "#7FB4CA"
+# mauve = "#A3B5D6"
+# pink = "#FF8DD7"
+# teal = "#7AA89F"
+# peach = "#DEBA87"
+# subtext0 = "#5C6170"
+# overlay0 = "#232A40"
+# rosewater = "#E0C15A"
+# flamingo = "#FF8DD7"
+# maroon = "#C4746E"
+# lavender = "#B99BF2"
+# subtext1 = "#8A8FA3"
+# overlay2 = "#313342"
+# overlay1 = "#191E28"
+# surface2 = "#27345C"
+# surface1 = "#232A40"
+# surface0 = "#191E28"
+# base = "none"
+# mantle = "#06080f"
+# crust = "#06080f"
+#
+# [palettes.dark]
+# text = "#f5f5f7"
+# red = "#6e6e70"
+# green = "#aeaeb0"
+# yellow = "#8e8e90"
+# blue = "#828284"
+# mauve = "#9c9ca0"
+# pink = "#48484a"
+# teal = "#bebec2"
+# peach = "#d1d1d6"
+# subtext0 = "#a8a8ac"
+# overlay0 = "#7a7a7c"
+# rosewater = "#ffffff"
+# flamingo = "#d1d1d6"
+# maroon = "#6e6e70"
+# lavender = "#9c9ca0"
+# subtext1 = "#bebec2"
+# overlay2 = "#98989a"
+# overlay1 = "#86868a"
+# surface2 = "#6c6c6e"
+# surface1 = "#5c5c5e"
+# surface0 = "#48484a"
+# base = "#2c2c2e"
+# mantle = "#1c1c1e"
+# crust = "#000000"
+#
+# [palettes.zenwritten_dark]
+# text = "#BBBBBB"
+# red = "#DE6E7C"
+# green = "#819B69"
+# yellow = "#B77E64"
+# blue = "#6099C0"
+# mauve = "#B279A7"
+# teal = "#66A5AD"
+# bright_red = "#E8838F"
+# bright_green = "#8BAE68"
+# bright_yellow = "#D68C67"
+# bright_blue = "#61ABDA"
+# bright_mauve = "#CF86C1"
+# bright_teal = "#65B8C1"
+# subtext0 = "#8E8E8E"
+# subtext1 = "#BBBBBB"
+# overlay0 = "#3D3839"
+# overlay1 = "#404040"
+# overlay2 = "#595959"
+# surface0 = "#191919"
+# surface1 = "#292929"
+# surface2 = "#3D3839"
+# base = "#191919"
+# mantle = "#191919"
+# crust = "#191919"
+#
+# [palettes.zenwritten_light]
+# text = "#353535"
+# red = "#A8334C"
+# green = "#4F6C31"
+# yellow = "#944927"
+# blue = "#286486"
+# mauve = "#88507D"
+# teal = "#3B8992"
+# bright_red = "#94253E"
+# bright_green = "#3F5A22"
+# bright_yellow = "#803D1C"
+# bright_blue = "#1D5573"
+# bright_mauve = "#7B3B70"
+# bright_teal = "#2B747C"
+# subtext0 = "#5C5C5C"
+# subtext1 = "#353535"
+# overlay0 = "#C6C3C3"
+# overlay1 = "#D7D7D7"
+# overlay2 = "#E0E0E0"
+# surface0 = "#EEEEEE"
+# surface1 = "#E5E5E5"
+# surface2 = "#D7D7D7"
+# base = "#EEEEEE"
+# mantle = "#EEEEEE"
+# crust = "#EEEEEE"
+#
+# [character]
+# success_symbol = "[󱗞 ](fg:green)"
+# error_symbol = "[󱗞 ](fg:red)"
+# vimcmd_symbol = "[N](bold red)"
+# vimcmd_replace_one_symbol = "[R](bold peach)"
+# vimcmd_visual_symbol = "[V](bold mauve)"
+#
+# [username]
+# style_user = 'bold blue'
+# style_root = 'bold red'
+# format = '[󱗞 $user](fg:$style) '
+# disabled = false
+# show_always = true
+#
+# [directory]
+# format = "[$path](bold $style)[$read_only]($read_only_style) "
+# truncation_length = 2
+# style = "fg:blue"
+# read_only_style = "fg:blue"
+# before_repo_root_style = "fg:blue"
+# truncation_symbol = "…/"
+# truncate_to_repo = true
+# read_only = "  "
+#
+# [directory.substitutions]
+# "Documents" = "󰈙 "
+# "Downloads" = " "
+# "Music" = " "
+# "Pictures" = " "
+#
+# [cmd_duration]
+# format = " took [ $duration]($style) "
+# style = "bold fg:yellow"
+# min_time = 500
+#
+# [git_branch]
+# format = "-> [$symbol$branch]($style) "
+# style = "bold fg:mauve"
+# symbol = " "
+#
+# [git_status]
+# format = '[$all_status$ahead_behind ]($style)'
+# style = "fg:text bg:pink"
+#
+# [docker_context]
+# disabled = true
+# symbol = " "
+#
+# [python]
+# disabled = false
+# format = "[$symbol$pyenv_prefix($version)( $virtualenv)](fg:peach)"
+# symbol = " "
+# version_format = "$raw"
+#
+# [java]
+# format = '[[ $symbol ($version) ](fg:red)]($style)'
+# version_format = "$raw"
+# symbol = " "
+# disabled = false
+#
+# [c]
+# format = '[[ $symbol ($version) ](fg:blue)]($style)'
+# symbol = " "
+# version_format = "$raw"
+# disabled = false
+#
+# [zig]
+# format = '[[ $symbol ($version) ](fg:peach)]($style)'
+# version_format = "$raw"
+# disabled = false
+#
+# [bun]
+# version_format = "$raw"
+# format = '[[ $symbol ($version) ](fg:text)]($style)'
+# disabled = false
+#
+# [nodejs]
+# symbol = ""
+# format = '[[ $symbol ($version) ](fg:green)]($style)'
+#
+# [rust]
+# symbol = ""
+# format = '[[ $symbol ($version) ](fg:red)]($style)'
+#
+# [golang]
+# symbol = ""
+# format = '[[ $symbol ($version) ](fg:teal)]($style)'
+#
+# [php]
+# symbol = ""
+# format = '[[ $symbol ($version) ](fg:peach)]($style)'
+#
+# [time]
+# disabled = false
+# time_format = "%R"
+# format = '[[   $time ](fg:subtext0)]($style)'

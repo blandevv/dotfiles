@@ -43,39 +43,39 @@ return {
                 },
             },
         },
-
-        {
-            "zenbones-theme/zenbones.nvim",
-            dependencies = "rktjmp/lush.nvim",
-            lazy = false,
-            priority = 1000,
-            config = function()
-                vim.g.zenwritten = {
-                    transparent_background = true,
-                    float_background = "none",
-                }
-                vim.o.background = "dark"
-                vim.cmd.colorscheme("zenwritten")
-                vim.api.nvim_create_autocmd("ColorScheme", {
-                    pattern = "*",
-                    callback = function()
-                        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-                        vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
-                        vim.api.nvim_set_hl(0, "FloatTitle", { bg = "none" })
-
-                        vim.api.nvim_set_hl(0, "SnacksPicker", { bg = "none" })
-                        vim.api.nvim_set_hl(0, "SnacksPickerBorder", { bg = "none" })
-                        vim.api.nvim_set_hl(0, "SnacksPickerTitle", { bg = "none" })
-                        vim.api.nvim_set_hl(0, "SnacksPickerRow", { bg = "none" })
-                    end,
-                })
-            end,
-        },
+        --
+        -- {
+        --     "zenbones-theme/zenbones.nvim",
+        --     dependencies = "rktjmp/lush.nvim",
+        --     lazy = false,
+        --     priority = 1000,
+        --     config = function()
+        --         vim.g.zenwritten = {
+        --             transparent_background = true,
+        --             float_background = "none",
+        --         }
+        --         vim.o.background = "dark"
+        --         vim.cmd.colorscheme("zenwritten")
+        --         vim.api.nvim_create_autocmd("ColorScheme", {
+        --             pattern = "*",
+        --             callback = function()
+        --                 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+        --                 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+        --                 vim.api.nvim_set_hl(0, "FloatTitle", { bg = "none" })
+        --
+        --                 vim.api.nvim_set_hl(0, "SnacksPicker", { bg = "none" })
+        --                 vim.api.nvim_set_hl(0, "SnacksPickerBorder", { bg = "none" })
+        --                 vim.api.nvim_set_hl(0, "SnacksPickerTitle", { bg = "none" })
+        --                 vim.api.nvim_set_hl(0, "SnacksPickerRow", { bg = "none" })
+        --             end,
+        --         })
+        --     end,
+        -- },
 
         {
             "LazyVim/LazyVim",
             opts = {
-                colorscheme = "zenwritten",
+                colorscheme = "gentleman-kanagawa-blur",
             },
         },
     },
