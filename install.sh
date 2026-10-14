@@ -320,6 +320,8 @@ create_symlinks() {
 
   backup_and_link "$DOTFILES_DIR/starship.toml" "$cfg/starship.toml"
   backup_and_link "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
+  backup_and_link "$DOTFILES_DIR/.gitconfig-personal" "$HOME/.gitconfig-personal"
+  backup_and_link "$DOTFILES_DIR/.gitconfig-work" "$HOME/.gitconfig-work"
 }
 
 # ─── tmux & ranger plugins ────────────────────────────────────────────────────
