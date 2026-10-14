@@ -1,0 +1,9 @@
+# Work identity for repositories whose remote uses the `work` SSH alias.
+# Loaded via includeIf "hasconfig:remote.*.url:git@work:" in ~/.gitconfig.
+#
+# No work identity is configured yet. When you have one, uncomment and edit
+# the block below. Until then this file is intentionally inert.
+
+# [user]
+# 	name = Your Name
+# 	email = you@company.com

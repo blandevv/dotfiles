@@ -1,0 +1,6 @@
+# Personal identity for repositories whose remote uses the `personal` SSH alias.
+# Loaded via includeIf "hasconfig:remote.*.url:git@personal:" in ~/.gitconfig.
+
+[user]
+	name = Jacobo Blandón Castro
+	email = jacoboblandon94@gmail.com
