@@ -3,9 +3,15 @@
 
 # herdr runtime files
 herdr/session.json
+herdr/session-snapshots/
 herdr/*.log
+herdr/*.sock*
 herdr/release-notes.json
+herdr/.plugins.lock
 
 # Plugins managed at install time (tpm / git clone), not vendored
 tmux/plugins/
 ranger/plugins/ranger_devicons/
+
+# AI agent skill registry (auto-generated, machine-specific)
+.atl/
