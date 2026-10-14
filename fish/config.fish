@@ -45,6 +45,8 @@ alias n="nvim"
 alias l="ll"
 alias lg="lazygit"
 alias py="python"
+alias bo="brew outdated"
+alias bu="brew upgrade"
 
 set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
@@ -60,7 +62,7 @@ set -l comment 8394A3 brblack
 set -l red CB7C94 red
 set -l orange DEBA87 orange
 set -l yellow FFE066 yellow
-set -l green 00FF00 green
+set -l green B7CC85 green
 set -l purple A3B5D6 purple
 set -l cyan 7AA89F cyan
 set -l pink FF8DD7 magenta
