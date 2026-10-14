@@ -24,7 +24,7 @@
 <br>
 <br>
 
-![preview](./assets/preview.png)
+![preview](./docs/preview.png)
 
 </div>
 
