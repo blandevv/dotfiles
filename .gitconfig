@@ -1,3 +1,9 @@
 [user]
 	name = Jacobo Blandón Castro
 	email = jacoboblandon94@gmail.com
+
+[includeIf "hasconfig:remote.*.url:git@personal:"]
+    path = ~/.gitconfig-personal
+
+[includeIf "hasconfig:remote.*.url:git@work:"]
+    path = ~/.gitconfig-work
