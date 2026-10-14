@@ -1,59 +1,47 @@
-# ---- theme ----
-theme = neon
-background-opacity = 0.75
-background-blur-radius = 24
+# --- theme ---
+theme = gentleman
+background-opacity = 0.95
+background-blur-radius = 20
 
-# ---- font ----
-font-family = "Cascadia Code"
-font-feature = ss01, ss02, ss03, ss19, ss20, calt, ss01
-adjust-cell-height = 75%
-font-size = 14
+# --- font ---
+font-family = IosevkaTerm NF
+font-size = 15
 
-# ---- cursor ----
-cursor-style = block
-cursor-style-blink = true
-cursor-invert-fg-bg = false
-cursor-opacity = .9
-custom-shader = shaders/cursor_smear.glsl
+# --- cursor ---
+custom-shader = shaders/cursor_smear_gentleman.glsl
 
-# ---- window ----
+# --- window ---
 maximize = true
-# macos-titlebar-style = hidden
 macos-option-as-alt = right
 macos-auto-secure-input = false
-confirm-close-surface = true
-window-decoration = auto
-window-padding-x = 2
-window-padding-y = 0
+window-decoration = true
+window-padding-color = extend
+window-step-resize = false
 window-padding-balance = true
 
-# ---- mouse ----
-mouse-hide-while-typing = true
+gtk-tabs-location = hidden
 
-# ---- shell integration ----
-shell-integration = detect
-
-# ---- keybindings ----
+# --- keybinds ---
 keybind = alt+left=unbind
 keybind = alt+right=unbind
 
-# ---- split management ----
+# --- split management ---
 keybind = alt+v=new_split:right
 keybind = alt+d=new_split:down
 
-# ---- split navigation ----
+# --- split navigation ---
 keybind = alt+k=goto_split:up
 keybind = alt+j=goto_split:down
 keybind = alt+h=goto_split:left
 keybind = alt+l=goto_split:right
 
-# ---- split resizing ----
+# --- split resizing ---
 keybind = ctrl+shift+j=resize_split:up,10
 keybind = ctrl+shift+k=resize_split:down,10
 keybind = ctrl+shift+h=resize_split:left,10
 keybind = ctrl+shift+l=resize_split:right,10
 
-# ---- split closing ----
+# --- split closing ---
 keybind = cmd+k=clear_screen
 keybind = shift+enter=text:\x1b\r
 
