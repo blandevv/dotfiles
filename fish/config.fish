@@ -56,16 +56,46 @@ pyenv init - | source
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-set -l foreground F3F6F9 normal
-set -l selection 263356 normal
-set -l comment 8394A3 brblack
-set -l red CB7C94 red
-set -l orange DEBA87 orange
-set -l yellow FFE066 yellow
-set -l green B7CC85 green
-set -l purple A3B5D6 purple
-set -l cyan 7AA89F cyan
-set -l pink FF8DD7 magenta
+# Palette follows the active ghostty theme (ghostty/themes/<name>).
+set -l theme_palette monochrome
+
+set -l foreground
+set -l selection
+set -l comment
+set -l red
+set -l orange
+set -l yellow
+set -l green
+set -l purple
+set -l cyan
+set -l pink
+
+switch $theme_palette
+    case monochrome
+        set foreground F2F2F2 normal
+        set selection 2E2E2E normal
+        set comment 7C7C7C brblack
+        set red 8F8F8F red
+        set orange A6A6A6 orange
+        set yellow DEDEDE yellow
+        set green B8B8B8 green
+        set purple CACACA purple
+        set cyan A6A6A6 cyan
+        set pink CACACA magenta
+    case gentleman
+        set foreground F3F6F9 normal
+        set selection 263356 normal
+        set comment 8394A3 brblack
+        set red CB7C94 red
+        set orange DEBA87 orange
+        set yellow FFE066 yellow
+        set green B7CC85 green
+        set purple A3B5D6 purple
+        set cyan 7AA89F cyan
+        set pink FF8DD7 magenta
+    case '*'
+        echo "fish: unknown theme_palette '$theme_palette'" >&2
+end
 
 # Syntax Highlighting Colors
 set -g fish_color_normal $foreground

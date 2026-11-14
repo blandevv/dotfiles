@@ -1,10 +1,11 @@
 # --- theme ---
-theme = gentleman
+theme = monochrome
 background-opacity = 0.95
 background-blur-radius = 20
 
 # --- font ---
-font-family = IosevkaTerm NF
+font-family = "Dank Mono"
+adjust-cell-height = 75%
 font-size = 15
 
 # --- cursor ---

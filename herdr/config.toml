@@ -5,19 +5,34 @@ onboarding = false
 [theme]
 # Use a built-in dark theme with neutral foregrounds so Herdr does not inherit
 # Ghostty bright-black selected rows or Kanagawa's warm/yellow label text.
+# The custom tokens below make it monochrome on top of that neutral base.
 name = "one-dark"
 
 [theme.custom]
-panel_bg = "#06080f"
-# Match Pi's Gentle theme, with a muted cyan for Herdr chrome.
-accent = "#6FA0AF"
-green = "#B7CC85"
-blue = "#6FA0AF"
-red = "#CB7C94"
-yellow = "#DEBA87"
+# Grayscale ramp, kept in sync with ghostty/themes/monochrome:
+# 000000 bg · 121212/1c1c1c surfaces · 2e2e2e selection · 8a8a8a muted · f2f2f2 text
+panel_bg = "#000000"
+sidebar_bg = "#0d0d0d"
+active_row_bg = "#1c1c1c"
+selection_bg = "#2e2e2e"
+surface0 = "#121212"
+surface1 = "#1a1a1a"
+surface_dim = "#0a0a0a"
+overlay0 = "#2e2e2e"
+overlay1 = "#3f3f3f"
+text = "#f2f2f2"
+subtext0 = "#8a8a8a"
+accent = "#cacaca"
+mauve = "#cacaca"
+green = "#b8b8b8"
+yellow = "#dedede"
+red = "#8f8f8f"
+blue = "#9b9b9b"
+teal = "#a6a6a6"
+peach = "#a6a6a6"
 
 [ui]
-accent = "#6FA0AF"
+accent = "#cacaca"
 
 [keys]
 # Match tmux/Zellij-style prefix muscle memory.
