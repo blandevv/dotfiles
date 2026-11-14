@@ -35,7 +35,7 @@
 one window, everything nested inside it:
 
 ```
-ghostty ····················· terminal · frosted glass, dual dark/light themes
+ghostty ····················· terminal · frosted glass, swappable dark themes
 └── zellij ·················· multiplexer · persistent sessions, floating panes
     └── fish + starship ····· shell · vi mode, context-aware prompt
         ├── nvim ············ editor · LazyVim, LSP, Copilot, lazygit inside
@@ -51,12 +51,13 @@ ghostty ····················· terminal · frosted glass, du
 
 | tool                                                        | role                       | highlights                                                                           |
 | ----------------------------------------------------------- | -------------------------- | ------------------------------------------------------------------------------------ |
-| [**ghostty**](https://ghostty.org/)                         | terminal emulator          | frosted glass background, dual dark/light themes, native split panes, Dank Mono font |
+| [**ghostty**](https://ghostty.org/)                         | terminal emulator          | frosted glass background, swappable dark themes (`gentleman` / `monochrome`), native split panes, Dank Mono font |
 | [**fish**](https://fishshell.com/)                          | shell                      | vi key bindings, curated aliases, smart tab completion out of the box                |
 | [**zellij**](https://zellij.dev/)                           | terminal multiplexer       | persistent sessions, custom pane/tab keybindings, floating panes                     |
 | [**tmux**](https://github.com/tmux/tmux)                    | terminal multiplexer (alt) | alternative multiplexer config with TPM-managed plugins                              |
+| [**herdr**](https://herdr.dev/)                             | agent multiplexer          | runs coding agents in a sidebar, monochrome palette synced with ghostty, tmux-style prefix |
 | [**starship**](https://starship.rs/)                        | prompt                     | fast, context-aware, shows git, language runtime, and more at a glance               |
-| [**fastfetch**](https://github.com/fastfetch-cli/fastfetch) | system info                | minimal boxed info panel with custom logo, shown on shell startup                    |
+| [**fastfetch**](https://github.com/fastfetch-cli/fastfetch) | system info                | minimal boxed info panel with custom logo, on demand via `ff`                        |
 
 </details>
 
@@ -115,7 +116,7 @@ ghostty ····················· terminal · frosted glass, du
 
 ## structure
 
-each directory is symlinked into `~/.config/<name>` by the installer.
+most directories are symlinked into `~/.config/<name>`; wallpapers are copied and git configs land in `$HOME`.
 
 ```
 dotfiles/
@@ -125,6 +126,7 @@ dotfiles/
 ├── fish/           # shell config, aliases, functions, themes
 ├── ghostty/        # terminal config, shaders, themes
 ├── git/            # global gitignore
+├── herdr/          # agent multiplexer config + theme
 ├── nvim/           # neovim (LazyVim) — plugins, lsp, keymaps
 ├── posting/        # http client
 ├── ranger/         # file manager + plugins
@@ -133,7 +135,9 @@ dotfiles/
 ├── wallpapers/     # wallpaper pack → ~/Pictures/Wallpapers
 ├── zellij/         # multiplexer layouts + keybindings
 ├── starship.toml   # prompt → ~/.config/starship.toml
-├── .gitconfig      # git → ~/.gitconfig
+├── .gitconfig      # git → ~/.gitconfig, includes the two below
+├── .gitconfig-personal  # personal git identity → ~/.gitconfig-personal
+├── .gitconfig-work      # work git identity → ~/.gitconfig-work
 └── install.sh      # automated installer (macos)
 ```
 
@@ -152,7 +156,7 @@ cd dotfiles
 
 idempotent — safe to re-run anytime. existing configs are backed up to `~/.dotfiles_backup/<timestamp>/` before anything is touched.
 
-<samp>flags:</samp>&ensp;`--skip-packages` skip homebrew installs&ensp;·&ensp;`--skip-shell` keep your current shell
+<samp>flags:</samp>&ensp;`--skip-packages` skip brew, cask and pipx installs&ensp;·&ensp;`--skip-shell` keep your current shell&ensp;·&ensp;`-h, --help` show help
 
 <details>
 <summary><samp>what the script does</samp></summary>
