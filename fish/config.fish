@@ -57,7 +57,7 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 # Palette follows the active ghostty theme (ghostty/themes/<name>).
-set -l theme_palette monochrome
+set -l theme_palette phosphor
 
 set -l foreground
 set -l selection
@@ -93,6 +93,17 @@ switch $theme_palette
         set purple A3B5D6 purple
         set cyan 7AA89F cyan
         set pink FF8DD7 magenta
+    case phosphor
+        set foreground E9F3F2 normal
+        set selection 2A3B48 normal
+        set comment 7B959D brblack
+        set red FF8B82 red
+        set orange F0C274 orange
+        set yellow FFD9A0 yellow
+        set green 8EF0BD green
+        set purple C3AEFF purple
+        set cyan 8CA6AD cyan
+        set pink D9CCFF magenta
     case '*'
         echo "fish: unknown theme_palette '$theme_palette'" >&2
 end

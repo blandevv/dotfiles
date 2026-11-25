@@ -1,4 +1,5 @@
-background = 06080f
+# background = 06080f
+background = 000000
 foreground = f3f6f9
 cursor-color = e0c15a
 selection-background = 263356

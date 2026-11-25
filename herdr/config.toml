@@ -9,30 +9,16 @@ onboarding = false
 name = "one-dark"
 
 [theme.custom]
-# Grayscale ramp, kept in sync with ghostty/themes/monochrome:
-# 000000 bg · 121212/1c1c1c surfaces · 2e2e2e selection · 8a8a8a muted · f2f2f2 text
-panel_bg = "#000000"
-sidebar_bg = "#0d0d0d"
-active_row_bg = "#1c1c1c"
-selection_bg = "#2e2e2e"
-surface0 = "#121212"
-surface1 = "#1a1a1a"
-surface_dim = "#0a0a0a"
-overlay0 = "#2e2e2e"
-overlay1 = "#3f3f3f"
-text = "#f2f2f2"
-subtext0 = "#8a8a8a"
-accent = "#cacaca"
-mauve = "#cacaca"
-green = "#b8b8b8"
-yellow = "#dedede"
-red = "#8f8f8f"
-blue = "#9b9b9b"
-teal = "#a6a6a6"
-peach = "#a6a6a6"
+panel_bg = "#080D12"
+# Follow the phosphor palette shared with Ghostty, Fish and blandevv.dev.
+accent = "#8EF0BD"
+green = "#8EF0BD"
+blue = "#8CA6AD"
+red = "#FF8B82"
+yellow = "#F0C274"
 
 [ui]
-accent = "#cacaca"
+accent = "#8EF0BD"
 
 [keys]
 # Match tmux/Zellij-style prefix muscle memory.

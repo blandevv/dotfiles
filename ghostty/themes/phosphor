@@ -1,0 +1,30 @@
+# phosphor — Ghostty theme matching the blandevv.dev dark palette
+# Deep blue-black canvas, neon-mint accent, muted green-gray labels.
+# Activate with `theme = phosphor` in ghostty/config.
+
+background = 080d12
+foreground = e9f3f2
+cursor-color = 8ef0bd
+cursor-text = 080d12
+selection-background = 2a3b48
+selection-foreground = e9f3f2
+
+# Normal — 0 is the canvas, 2 carries the neon accent.
+palette = 0=#080d12
+palette = 1=#ff8b82
+palette = 2=#8ef0bd
+palette = 3=#f0c274
+palette = 4=#8ca6ad
+palette = 5=#c3aeff
+palette = 6=#7b959d
+palette = 7=#e9f3f2
+
+# Bright — lifted one step above each normal counterpart.
+palette = 8=#2a3b48
+palette = 9=#ffb3ad
+palette = 10=#b6ffd8
+palette = 11=#ffd9a0
+palette = 12=#b3ccd2
+palette = 13=#d9ccff
+palette = 14=#a8c4cb
+palette = 15=#ffffff

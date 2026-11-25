@@ -75,7 +75,7 @@ return {
         {
             "LazyVim/LazyVim",
             opts = {
-                colorscheme = "monoglow",
+                colorscheme = "gentleman-kanagawa-blur",
             },
         },
     },

@@ -1,11 +1,11 @@
 # --- theme ---
-theme = monochrome
+theme = phosphor
 background-opacity = 0.95
 background-blur-radius = 20
 
 # --- font ---
-font-family = "Dank Mono"
-adjust-cell-height = 75%
+font-family = "IosevkaTerm NF"
+# adjust-cell-height = 75%
 font-size = 15
 
 # --- cursor ---
